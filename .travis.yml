@@ -6,7 +6,7 @@ services:
 
 env:
   global:
-    - PI_APP=docker-host-control
+    - PI_APP=forward-web-hook
 
 
 script:

@@ -1,13 +1,12 @@
 {
     "name": "host-control",
     "version": "0.0.0",
-    "description": "BoilerControl",
     "main": "app.js",
     "author": {
       "name": "piscos"
     },
     "dependencies": {
-      "iohook": "0.4.5"
+      "smee-client": "1.1.0"
     }
   }
   
