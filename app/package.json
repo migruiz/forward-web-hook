@@ -1,0 +1,13 @@
+{
+    "name": "host-control",
+    "version": "0.0.0",
+    "description": "BoilerControl",
+    "main": "app.js",
+    "author": {
+      "name": "piscos"
+    },
+    "dependencies": {
+      "iohook": "0.4.5"
+    }
+  }
+  
