@@ -1,12 +1,11 @@
 {
-    "name": "host-control",
-    "version": "0.0.0",
-    "main": "app.js",
-    "author": {
-      "name": "piscos"
-    },
-    "dependencies": {
-      "smee-client": "1.1.0"
-    }
+  "name": "host-control",
+  "version": "0.0.0",
+  "main": "app.js",
+  "author": {
+    "name": "piscos"
+  },
+  "dependencies": {
+    "firebase": "6.0.2"
   }
-  
+}
