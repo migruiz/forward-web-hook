@@ -1,4 +1,5 @@
 'use strict';
+const axios = require('axios')
 var firebase = require("firebase/app");
 require('firebase/database');
 var config = {
@@ -13,13 +14,25 @@ var config = {
 firebase.initializeApp(config);
 
 
+var listToMonitor = 
+[
+  {key:'muster',target:'https://dpews-15bf5.firebaseio.com/posts/sent.json'}
+]
+
+for (const index in listToMonitor) {
+    const element = listToMonitor[index];
+    var starCountRef = firebase.database().ref('posts/'+element.key)
+    starCountRef.on('child_added', async function(snapshot) {
+      console.log(snapshot.val())
+      var updates = {};
+      updates['/posts/'+ element.key + '/' + snapshot.key] = null;
+      await axios.post(element.target,snapshot.val());
+      await firebase.database().ref().update(updates);
+      console.log("deleted")
+    });
+}
 
 
-var starCountRef = firebase.database().ref('posts')
-starCountRef.on('child_added', async function(snapshot) {
-  console.log(snapshot.val())
-   var updates = {};
-  updates['/posts/' + snapshot.key] = null;
-  await firebase.database().ref().update(updates);
-  console.log("deleted")
-});
+
+
+

@@ -6,6 +6,7 @@
     "name": "piscos"
   },
   "dependencies": {
-    "firebase": "6.0.2"
+    "firebase": "6.0.2",
+    "axios": "0.18.0"
   }
 }
