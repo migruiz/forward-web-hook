@@ -6,8 +6,8 @@ firebase.initializeApp(JSON.parse(process.env.CONFIG));
 
 
 
-
-for (const index in JSON.parse(process.env.MAPPINGS)) {
+var listToMonitor=JSON.parse(process.env.MAPPINGS)
+for (const index in listToMonitor) {
     const element = listToMonitor[index];
     var starCountRef = firebase.database().ref('posts/'+element.key)
     starCountRef.on('child_added', async function(snapshot) {
